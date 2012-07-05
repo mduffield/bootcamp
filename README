@@ -1,6 +1,6 @@
 Welcome to bootcamp!
 
-This is a small framework based on Sinatra and it uses the Twitter bootstrap and cucumber for testing and BDD.
+This is a small bootstrap/framework based on Sinatra and it uses the Twitter bootstrap and cucumber for testing and BDD.
 
 It even includes a small sqlite sample database with a test admin user and user level user.
 
@@ -19,7 +19,7 @@ You might be able to just replace "username" with the user you are running it un
 
 Run bundle to grab all the gems you'll need.
 
-Then you cat get going. 
+Then you can get going. 
 
 To stop/start thin server:
 ./control.sh stop
