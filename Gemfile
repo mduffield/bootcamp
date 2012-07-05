@@ -1,0 +1,19 @@
+source :rubygems
+source "http://rubygems.org"
+source :rubyforge
+source "http://gems.rubyforge.org"
+source :gemcutter
+source "http://gemcutter.org"
+
+gem "bundler"
+gem "sqlite3"
+gem "sequel"
+gem "sinatra"
+gem "sinatra-flash"
+gem "thin"
+gem "uuid"
+gem "pony"
+gem "cucumber"
+gem "webrat"
+gem "rspec"
+gem "selenium-client"

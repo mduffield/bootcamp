@@ -1,0 +1,36 @@
+<h3>System User</h3>
+
+<form id="system_user" method="post" action="/admin/system_user" class="form-inline well">
+        <input type="hidden" name="id" value="<%= @system_user.id %>" />
+        <label>Username</label>
+        <br />
+        <input type="text" name="username" value="<%= @system_user.username %>" placeholder="Username"/>
+        <br />
+        <br />
+        <label>Password</label>
+        <br />
+        <input type="password" name="password" value="<%= @system_user.password %>" />
+        <br />
+        <br />
+        <label>Email</label>
+        <br />
+        <input type="text" name="email" value="<%= @system_user.email %>" />
+        <br />
+        <br />
+        <label>Access Level</label>
+        <br />
+	<select name="access">
+		<option value="admin" <%= @system_user.access == "admin" ? "selected" : "" %> >Admin</option>
+		<option value="user" <%= @system_user.access == "user" ? "selected" : "" %> >User</option>
+	</select>
+
+        <br />
+        <br />
+        <button class="btn primary" type="submit" name="action" value="save">Save</button>
+</form>
+<% if @system_user.id %>
+<form id="delete" method="post" action="/admin/system_user/<%= @system_user.id %>">
+        <input type="hidden" name="_method" value="delete" />
+        <button class="btn primary" type="submit">Delete</button>
+</form>
+<% end %>

@@ -1,0 +1,31 @@
+<h3>Form</h3>
+
+<form id="form" method="post" action="/admin/form" class="form-inline well">
+        <label>Service Agent</label>
+        <br />
+        <select name="service_agent">
+        <% @service_agents.each do |agent| %>
+                <option value="<%= agent.id %>" <%= @form.service_agent_id == agent.id ? "selected" : ""%> ><%= agent.name %></option>    
+        <% end %>
+        </select>
+        <input type="hidden" name="id" value="<%= @form.id %>" />
+        <br />
+        <br />
+        <label>Form URL</label>
+        <br />
+        <input type="text" name="url" value="<%= @form.url %>" placeholder="URL"/>
+        <br />
+        <br />
+        <label>Date Received</label>
+        <br />
+        <input type="text" name="date_received" value="<%= @form.date_received %>" placeholder="Date Received"/>
+        <br />
+        <br />
+        <button class="btn primary" type="submit" name="action" value="save">Save</button>
+</form>
+<% if @form.id %>
+<form id="delete" method="post" action="/admin/form/<%= @form.id %>">
+        <input type="hidden" name="_method" value="delete" />
+        <button class="btn primary" type="submit">Delete</button>
+</form>
+<% end %>

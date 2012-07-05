@@ -1,0 +1,48 @@
+Welcome to bootcamp!
+
+This is a small framework based on Sinatra and it uses the Twitter bootstrap and cucumber for testing and BDD.
+
+It even includes a small sqlite sample database with a test admin user and user level user.
+
+The default logins are as follows:
+
+Admin Login:
+	Username:  admin
+	Password:  admin
+
+User Login:
+	Username:  user
+	Password:  user
+
+You will need to edit the config.yml file to reflect the username and pathing for your app. 
+You might be able to just replace "username" with the user you are running it under, depending on your configuration.
+
+Run bundle to grab all the gems you'll need.
+
+Then you cat get going. 
+
+To stop/start thin server:
+./control.sh stop
+./control.sh start
+
+NOTE:  This will spawn 2 servers on ports 4567 and 4568.
+
+This app can easily sit behind nginx by adding something like the following to your config:
+
+upstream www_mydomain_com {
+  server 127.0.0.1:4567;
+  server 127.0.0.1:4568;
+}
+
+server {
+  listen    www.mydomain.com:80
+  server_name  www.mydomain.com live;
+  access_log /path/to/logfile.log
+
+  location / {
+    proxy_pass http://www_mydomain_com;
+  }
+
+}
+
+Visit http://localhost:4567 in your favorite browser.

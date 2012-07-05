@@ -1,0 +1,25 @@
+<h3>System Users</h3>
+<br/>
+<a href="/admin/system_user/new">Add New User</a>
+<br/>
+<br/>
+<table border=1 class="table-striped">
+        <thead>
+        <td><strong>Username</strong></td>
+        <td><strong>Email</strong></td>
+        <td><strong>Access</strong></td>
+        </thead>
+<% @system_users.each do |system_user| %>
+                <tr>
+                <td>
+                        <a href="/admin/system_user/<%= system_user.id %>"><%= system_user.username %></a>
+                </td>
+                <td>
+                        <a href="/admin/system_user/<%= system_user.id %>"><%= system_user.email %></a>
+                </td>
+                <td>
+                        <%= system_user.access %>
+                </td>
+                </tr>
+<% end %>
+</table>
